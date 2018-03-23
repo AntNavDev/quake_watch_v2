@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="map" class="col-md-3"></div>
+    <div id="my_ui" class="col-md-3">
+        <div id="buttons">
+            <form>
+                <label for="start_date">Start Date:<br><input id="start_date" type="text" name="start_date" class="location_data" required></label><br>
+                <label for="end_date">End Date:<br><input id="end_date" type="text" name="end_date" class="location_data" required></label><br>
+                <label for="latitude_input">Latitude:<br><input id="latitude_input" type="text" name="latitude" class="location_data" required></label><br>
+                <label for="longitude_input">Longitude:<br><input id="longitude_input" type="text" name="longitude" class="location_data" required></label><br>
+                <label for="radius_input">Radius(in kilometers):<br><input id="radius_input" type="text" name="radius" class="location_data" required></label><br>
+                <button id="get_quake_results_button" class="btn btn-danger">Push</button>
+            </form>
+        </div>
+    </div>  
+    <div id="content" class="col-md-3">
+    </div>
+    <div id="user_key" class="col-md-3">
+        <h3>Key:</h3>
+        <p>Example Coordinates:</p>
+        <p>California:<br>Latitude = 37.575<br>Longitude = -118.840</p>
+        <p>Argentina:<br>Latitude = -38.4161<br>Longitude = -63.6167</p>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+<script type="text/javascript" src="./google_marker_clusterer/markerclusterer.js"></script>
+<script type="text/javascript" src="./js/search.js"></script>
+<script async defer type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeWAeLOFOkyr1waSDWIZw8E2w3UR9O9Jo&callback=initMap"></script>
+{% endblock %}
