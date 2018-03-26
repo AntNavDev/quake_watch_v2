@@ -246,3 +246,12 @@ $(document).ready(function(){
     });
     
 });
+
+$('#pop_test').on('click', function(){
+    $('#start_date').val('03/04/2018');
+    $('#end_date').val('03/09/2018');
+    $('#latitude_input').val(37.575);
+    $('#longitude_input').val(-118.840);
+    $('#radius_input').val(50);
+    $('#get_quake_results_button').attr('disabled', false);
+});
